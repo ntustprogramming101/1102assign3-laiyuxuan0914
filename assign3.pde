@@ -17,13 +17,13 @@ boolean debugMode = false;
 
 
 
-//last
+
 PImage groundhogIdle;
 PImage groundhogDown, groundhogLeft, groundhogRight;
 final int GROUNDHOG_W=80, GROUNDHOG_H=80;
 final int SOIL_W=80, SOIL_H=80;
 
-//move
+
 int animationFrame;
 
 final int GROUNDHOG_IDLE = 0;
@@ -35,7 +35,7 @@ int groundhogState = GROUNDHOG_IDLE;
 float groundhogX = width*4/8;
 float groundhogY = height*1/6;
 float newY;
-//soil'y up(-up)
+
 
 
 void setup() {
@@ -63,7 +63,7 @@ void setup() {
   stone2= loadImage("img/stone2.png");
   life= loadImage("img/life.png");
 
-  //groundhog
+  
 
   groundhogX=320;
   groundhogY=80;
@@ -173,7 +173,7 @@ for( int i=0;i<5;i++){
       }
     }
 
-    //rock1-8
+    
     final int COUNT=8;
     float spacingX=width/COUNT;
     float spacingY=80*8/COUNT;
@@ -184,7 +184,7 @@ for( int i=0;i<5;i++){
       image(stone1, stone_x, stone_y+80);
     }
 
-    //19
+    
     final int COUNTN=8;
     float spacingXn=width/COUNTN;
     float spacingYn=80*8/COUNTN;
@@ -216,7 +216,7 @@ for( int i=0;i<5;i++){
 
 
 
-    //9-16
+    
     pushMatrix();
     translate(0, (9+1)*80);
     int s=80;
@@ -262,7 +262,7 @@ for( int i=0;i<5;i++){
     popMatrix(); 
     popMatrix(); 
 
-    // Player
+    
    
     if (animationFrame<15) {
       animationFrame++;
