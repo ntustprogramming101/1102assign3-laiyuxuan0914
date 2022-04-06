@@ -263,7 +263,7 @@ for( int i=0;i<5;i++){
     popMatrix(); 
 
     // Player
-    //move
+   
     if (animationFrame<15) {
       animationFrame++;
       switch(groundhogState) {
