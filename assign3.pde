@@ -36,7 +36,6 @@ float groundhogY = height*1/6;
 float newY;
 //soil'y up(-up)
 
-int l;
 
 void setup() {
   size(640, 480, P2D);
