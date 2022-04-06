@@ -343,9 +343,9 @@ for( int i=0;i<5;i++){
     } else {
 
       image(restartNormal, START_BUTTON_X, START_BUTTON_Y);
-    }
-    break;
-  }
+    }}
+   
+  
 
  
   if (debugMode) {
@@ -370,7 +370,7 @@ if (groundhogState == GROUNDHOG_IDLE) {
       break;
     }
   }
-  
+  // DO NOT REMOVE OR EDIT THE FOLLOWING SWITCH/CASES
   switch(key) {
   case 'w':
     debugMode = true;
