@@ -35,9 +35,7 @@ float groundhogX = width*4/8;
 float groundhogY = height*1/6;
 float newY;
 //soil'y up(-up)
-int upY=80;
-int soilY=160;
-boolean up;
+
 int l;
 
 void setup() {
@@ -64,7 +62,7 @@ void setup() {
   stone1= loadImage("img/stone1.png");
   stone2= loadImage("img/stone2.png");
   life= loadImage("img/life.png");
-  up=false;
+
   //groundhog
 
   groundhogX=320;
@@ -234,6 +232,7 @@ for( int i=0;i<5;i++){
     image(stone1, 2*s, 4*s);
     image(stone1, 5*s, 4*s);
     image(stone1, 6*s, 4*s);
+     
     image(stone1, 1*s, 7*s);
     image(stone1, 2*s, 7*s);
     image(stone1, 5*s, 7*s);
@@ -324,17 +323,8 @@ for( int i=0;i<5;i++){
       break;
     case GROUNDHOG_DOWN:
       image(groundhogDown, groundhogX, groundhogY);
-      //SOIL
-
       break;
-    }
-
-
-
-
-
-    
-
+    } 
     break;
 
   case GAME_OVER: // Gameover Screen
@@ -402,8 +392,4 @@ void keyPressed() {
       break;
     }
   }
-}
-
-
-void keyReleased() {
 }
