@@ -287,17 +287,15 @@ for( int i=0;i<5;i++){
       groundhogState = GROUNDHOG_IDLE;
     }
     
-    for( int i=0;i<playerHealth;i++){
-  image(life,10+70*i,10);
+    for( int k=0;k<playerHealth;k++){
+  image(life,10+70*k,10);
   }
   if(playerHealth==0){
-    playerHealth=2;
-    groundhogX=320;
-    groundhogY=80;
-    newY=0;
+    
+   
     
     gameState=GAME_OVER;
-    playerHealth =2;
+    
     }
 
     //avoid out of area
@@ -324,6 +322,7 @@ for( int i=0;i<5;i++){
       break;
     case GROUNDHOG_DOWN:
       image(groundhogDown, groundhogX, groundhogY);
+      
       break;
     } 
     break;
@@ -336,12 +335,16 @@ for( int i=0;i<5;i++){
       && START_BUTTON_Y + START_BUTTON_H > mouseY
       && START_BUTTON_Y < mouseY) {
 
-      image(restartHovered, START_BUTTON_X, START_BUTTON_Y);
+      image(restartHovered, START_BUTTON_X, START_BUTTON_Y);}
       if (mousePressed) {
         gameState = GAME_RUN;
         mousePressed = false;
         // Remember to initialize the game here!
-      }
+        playerHealth =2;
+         groundhogX=320;
+    groundhogY=80;
+    newY=0;
+      
     } else {
 
       image(restartNormal, START_BUTTON_X, START_BUTTON_Y);
@@ -357,7 +360,21 @@ for( int i=0;i<5;i++){
 
 void keyPressed() {
   // Add your moving input code here
+if (groundhogState == GROUNDHOG_IDLE) {
+    animationFrame = 0;
+    switch(keyCode) {
+    case LEFT:
+      groundhogState = GROUNDHOG_LEFT;
+      break;
+    case RIGHT:
+      groundhogState = GROUNDHOG_RIGHT;
+      break;
+    case DOWN:
+      groundhogState = GROUNDHOG_DOWN;
 
+      break;
+    }
+  }
   // DO NOT REMOVE OR EDIT THE FOLLOWING SWITCH/CASES
   switch(key) {
   case 'w':
@@ -378,19 +395,5 @@ void keyPressed() {
     if (playerHealth < 5) playerHealth ++;
     break;
   }
-  if (groundhogState == GROUNDHOG_IDLE) {
-    animationFrame = 0;
-    switch(keyCode) {
-    case LEFT:
-      groundhogState = GROUNDHOG_LEFT;
-      break;
-    case RIGHT:
-      groundhogState = GROUNDHOG_RIGHT;
-      break;
-    case DOWN:
-      groundhogState = GROUNDHOG_DOWN;
-
-      break;
-    }
-  }
+  
 }
