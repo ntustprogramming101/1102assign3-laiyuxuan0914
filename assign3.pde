@@ -293,7 +293,10 @@ for( int i=0;i<5;i++){
   image(life,10+70*i,10);
   }
   if(playerHealth==0){
-    playerHealth=5;
+    playerHealth=2;
+    groundhogX=320;
+    groundhogY=80;
+    newY=0;
     gameState=GAME_OVER;
     }
 
