@@ -8,7 +8,7 @@ final int START_BUTTON_X = 248;
 final int START_BUTTON_Y = 360;
 
 PImage title, gameover, startNormal, startHovered, restartNormal, restartHovered;
-PImage bg, soil8x24, soil0, soil1, soil2, soil3, soil4, soil5,life;
+PImage bg,soil0, soil1, soil2, soil3, soil4, soil5,life;
 PImage stone1, stone2;
 // For debug function; DO NOT edit or remove this!
 int playerHealth = 2;
@@ -47,7 +47,6 @@ void setup() {
   startHovered = loadImage("img/startHovered.png");
   restartNormal = loadImage("img/restartNormal.png");
   restartHovered = loadImage("img/restartHovered.png");
-  soil8x24 = loadImage("img/soil8x24.png");
   groundhogIdle=loadImage("img/groundhogIdle.png");
   groundhogDown=loadImage("img/groundhogDown.png");
   groundhogLeft=loadImage("img/groundhogLeft.png");
@@ -290,13 +289,7 @@ for( int i=0;i<5;i++){
     for( int k=0;k<playerHealth;k++){
   image(life,10+70*k,10);
   }
-  if(playerHealth==0){
-    
-   
-    
-    gameState=GAME_OVER;
-    
-    }
+
 
     //avoid out of area
     if (groundhogX>560) { 
@@ -324,7 +317,14 @@ for( int i=0;i<5;i++){
       image(groundhogDown, groundhogX, groundhogY);
       
       break;
-    } 
+    }
+      if(playerHealth==0){
+    
+   
+    
+    gameState=GAME_OVER;
+    
+    }
     break;
 
   case GAME_OVER: // Gameover Screen
