@@ -20,7 +20,7 @@ boolean debugMode = false;
 PImage groundhogIdle;
 PImage groundhogDown, groundhogLeft, groundhogRight;
 final int GROUNDHOG_W=80, GROUNDHOG_H=80;
-final int SOIL_W=80, _H=80;
+final int SOIL_W=80, SOIL_H=80;
 
 //move
 int animationFrame;
@@ -67,7 +67,7 @@ void setup() {
   groundhogX=320;
   groundhogY=80;
   newY=0;
-  l=2;
+
 }
 
 void draw() {
@@ -136,7 +136,7 @@ for( int i=0;i<5;i++){
     rect(0, 160 - GRASS_HEIGHT, width, GRASS_HEIGHT);
 
     // Soil - REPLACE THIS PART WITH YOUR LOOP CODE!
-    image(soil8x24, 0, 160);
+    
     for ( int y=2; y<6; y++ ) {
       for ( int x=0; x<8; x++ ) {
         image( soil0, x*80, y*80);
@@ -295,7 +295,9 @@ for( int i=0;i<5;i++){
     groundhogX=320;
     groundhogY=80;
     newY=0;
+    
     gameState=GAME_OVER;
+    playerHealth =2;
     }
 
     //avoid out of area
