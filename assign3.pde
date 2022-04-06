@@ -10,7 +10,7 @@ final int START_BUTTON_Y = 360;
 PImage title, gameover, startNormal, startHovered, restartNormal, restartHovered;
 PImage bg,soil0, soil1, soil2, soil3, soil4, soil5,life;
 PImage stone1, stone2;
-// For debug function; DO NOT edit or remove this!
+
 int playerHealth = 2;
 float cameraOffsetY = 0;
 boolean debugMode = false;
@@ -41,7 +41,7 @@ float newY;
 void setup() {
   size(640, 480);
   frameRate(60);
-  // Enter your setup code here (please put loadImage() here or your game will lag like crazy)
+ 
   bg = loadImage("img/bg.jpg");
   title = loadImage("img/title.jpg");
   gameover = loadImage("img/gameover.jpg");
@@ -72,18 +72,11 @@ gameState=0;
 }
 
 void draw() {
-  /* ------ Debug Function ------ 
-   
-   Please DO NOT edit the code here.
-   It's for reviewing other requirements when you fail to complete the camera moving requirement.
-   
-   */
+ 
   if (debugMode) {
     pushMatrix();
     translate(0, cameraOffsetY);
   }
-  /* ------ End of Debug Function ------ */
-
 
   switch (gameState) {
 
@@ -106,7 +99,7 @@ void draw() {
     }
     break;
 
-  case GAME_RUN: // In-Game
+  case GAME_RUN:
 for( int i=0;i<5;i++){
   image(life,10+70*i,10);
   }
@@ -118,7 +111,7 @@ for( int i=0;i<5;i++){
     }
 
 
-    // Background
+   
     image(bg, 0, 0);
 
     // Sun
@@ -131,12 +124,12 @@ for( int i=0;i<5;i++){
     translate(0, -newY);
 
 
-    // Grass
+  
     fill(124, 204, 25);
     noStroke();
     rect(0, 160 - GRASS_HEIGHT, width, GRASS_HEIGHT);
 
-    // Soil - REPLACE THIS PART WITH YOUR LOOP CODE!
+  
     
     for ( int y=2; y<6; y++ ) {
       for ( int x=0; x<8; x++ ) {
@@ -341,7 +334,7 @@ for( int i=0;i<5;i++){
       if (mousePressed) {
         gameState = GAME_RUN;
         mousePressed = false;
-        // Remember to initialize the game here!
+       
         playerHealth =2;
          groundhogX=320;
     groundhogY=80;
@@ -354,14 +347,14 @@ for( int i=0;i<5;i++){
     break;
   }
 
-  // DO NOT REMOVE OR EDIT THE FOLLOWING 3 LINES
+ 
   if (debugMode) {
     popMatrix();
   }
 }
 
 void keyPressed() {
-  // Add your moving input code here
+  
 if (groundhogState == GROUNDHOG_IDLE) {
     animationFrame = 0;
     switch(keyCode) {
@@ -377,7 +370,7 @@ if (groundhogState == GROUNDHOG_IDLE) {
       break;
     }
   }
-  // DO NOT REMOVE OR EDIT THE FOLLOWING SWITCH/CASES
+  
   switch(key) {
   case 'w':
     debugMode = true;
