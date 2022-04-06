@@ -1,5 +1,5 @@
 final int GAME_START = 0, GAME_RUN = 1, GAME_OVER = 2;
-int gameState = 0;
+int gameState;
 
 final int GRASS_HEIGHT = 15;
 final int START_BUTTON_W = 144;
@@ -14,6 +14,7 @@ PImage stone1, stone2;
 int playerHealth = 2;
 float cameraOffsetY = 0;
 boolean debugMode = false;
+
 
 
 //last
@@ -38,7 +39,8 @@ float newY;
 
 
 void setup() {
-  size(640, 480, P2D);
+  size(640, 480);
+  frameRate(60);
   // Enter your setup code here (please put loadImage() here or your game will lag like crazy)
   bg = loadImage("img/bg.jpg");
   title = loadImage("img/title.jpg");
@@ -66,7 +68,7 @@ void setup() {
   groundhogX=320;
   groundhogY=80;
   newY=0;
-
+gameState=0;
 }
 
 void draw() {
